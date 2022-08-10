@@ -10,4 +10,7 @@ brain-even:
 	node bin/brain-even.js
 publish:
 	npm publish --dry-run
-
+brain-calc:
+	node bin/brain-calc.js
+publish:
+	npm publish --dry-run
