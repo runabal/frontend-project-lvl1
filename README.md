@@ -4,3 +4,4 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/ba8376bf451401f7ec34/maintainability)](https://codeclimate.com/github/runabal/frontend-project-lvl1/maintainability)
 https://asciinema.org/a/0DTf3XzfEmQ1wlfX6deHwIiFV
 https://asciinema.org/a/dTGz6Cd0kqRwkcpZsBr1rKe1T
+https://asciinema.org/a/wHXQ4oYJkABWnpIRC2o7RzXtp
