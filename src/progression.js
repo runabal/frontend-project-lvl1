@@ -23,8 +23,7 @@ const progression = () => {
       console.log("Correct!");
       i += 1;
     } else {
-      console.log(userAnswer + " is wrong answer ;(. Correct answer was " + result[hiddenNumber] + ".");
-      console.log("Let's try again, " + userName + "!");
+      console.log(userAnswer + " is wrong answer ;(. Correct answer was " + result[hiddenNumber] + ". Let's try again, " + userName + "!");
       break;
     }
   } while (i < 3);
