@@ -1,7 +1,7 @@
 import readlineSync from "readline-sync";
 
 const calc = () => {
-  const userName = readlineSync.question("May I have you name? ");
+  const userName = readlineSync.question("May I have your name? ");
   console.log(`Hello, ${userName}!`);
   console.log("What is the result of expresssion?");
   let i = 0;
@@ -11,28 +11,23 @@ const calc = () => {
     const math = ["+", "-", "*"];
     const mathAction = math[Math.floor(Math.random() * 3)];
     console.log("Question: ");
-
     let result = 0;
     switch (mathAction) {
       case "+":
         result = num1 + num2;
         console.log(num1, "+", num2);
         break;
-
       case "-":
         result = num1 - num2;
         console.log(num1, "-", num2);
         break;
-
       case "*":
         result = num1 * num2;
         console.log(num1, "*", num2);
         break;
-
       default:
         result = 0;
     }
-
     const userAnswer = readlineSync.question("Your answer: ");
     if (result.toString() === userAnswer) {
       console.log("Correct!");
@@ -45,7 +40,7 @@ const calc = () => {
     }
   } while (i < 3);
   if (i === 3) {
-    console.log(`Congratulation, ${userName}!`);
+    console.log(`Congratulations, ${userName}!`);
   }
 };
 export default calc;
