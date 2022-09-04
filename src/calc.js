@@ -8,22 +8,19 @@ const calc = () => {
   do {
     const num1 = Math.floor(Math.random() * 100);
     const num2 = Math.floor(Math.random() * 100);
-    const math = ["+", "-", "*"];
-    const mathAction = math[Math.floor(Math.random() * 3)];
-    console.log("Question: ");
+    const operation = ["+", "-", "*"];
+    const mathAction = operation[Math.floor(Math.random() * 3)];
+    console.log("Question: " + num1 + " " + mathAction + " " + num2);
     let result = 0;
     switch (mathAction) {
       case "+":
         result = num1 + num2;
-        console.log(num1, "+", num2);
         break;
       case "-":
         result = num1 - num2;
-        console.log(num1, "-", num2);
         break;
       case "*":
         result = num1 * num2;
-        console.log(num1, "*", num2);
         break;
       default:
         result = 0;
