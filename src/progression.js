@@ -24,7 +24,7 @@ const progression = () => {
       console.log('Correct!');
       i += 1;
     } else {
-      console.log(`${userAnswer}is wrong answer ;(. Correct answer was ${resulthiddenNumber}.`);
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${resulthiddenNumber}.`);
       console.log(`Let's try again, ${userName}!`);
       break;
     }
