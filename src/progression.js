@@ -20,7 +20,7 @@ const progression = () => {
     console.log('Question: ' + endresult.join(" "));
     const userAnswer = readlineSync.question("Your answer: ");
     const resulthiddenNumber = result[hiddenNumber];
-    if (resulthiddenNumber.toString() === userAnswer) {
+    if (String(resulthiddenNumber) === userAnswer) {
       console.log("Correct!");
       i += 1;
     } else {
