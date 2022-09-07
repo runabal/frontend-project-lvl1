@@ -19,7 +19,8 @@ const progression = () => {
     endresult.splice(hiddenNumber, 1, "..");
     console.log('Question: ' + endresult.join(" "));
     const userAnswer = readlineSync.question("Your answer: ");
-    if (result[hiddenNumber].toString() === userAnswer) {
+    const resulthiddenNumber = result[hiddenNumber];
+    if (resulthiddenNumber.toString() === userAnswer) {
       console.log("Correct!");
       i += 1;
     } else {
