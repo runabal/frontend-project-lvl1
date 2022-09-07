@@ -1,9 +1,9 @@
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
 
 const progression = () => {
-  const userName = readlineSync.question("May I have your name? ");
+  const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
-  console.log("What number is mission in the progression?");
+  console.log('What number is mission in the progression?');
   let i = 0;
   do {
     const startnumber = Math.floor(Math.random() * 20) + 1;
@@ -16,16 +16,16 @@ const progression = () => {
       result.push(arrresult);
     }
     const endresult = result.slice();
-    endresult.splice(hiddenNumber, 1, "..");
-    console.log('Question: ' + endresult.join(" "));
-    const userAnswer = readlineSync.question("Your answer: ");
+    endresult.splice(hiddenNumber, 1, '..');
+    console.log(`Question: ${endresult.join(' ')}`);
+    const userAnswer = readlineSync.question('Your answer: ');
     const resulthiddenNumber = result[hiddenNumber];
     if (String(resulthiddenNumber) === userAnswer) {
-      console.log("Correct!");
+      console.log('Correct!');
       i += 1;
     } else {
-      console.log (userAnswer + " is wrong answer ;(. Correct answer was " + resulthiddenNumber + ".");
-      console.log("Let's try again, " + userName + "!");
+      console.log(`${userAnswer}is wrong answer ;(. Correct answer was ${resulthiddenNumber}.`);
+      console.log(`Let's try again, ${userName}!`);
       break;
     }
   } while (i < 3);
