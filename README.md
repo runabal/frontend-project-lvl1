@@ -17,7 +17,7 @@ brain-prime - checking if a number is prime
 ### Launch games and videos:
 ```
 brain-even
-<asciinema-player> https://asciinema.org/a/H9tHusQRzxDXghhxq7oGXmJR1
+<asciinema-player src=" https://asciinema.org/a/H9tHusQRzxDXghhxq7oGXmJR1" poster="npt:2:34"></asciinema-player> 
 
 brain-calc
 https://asciinema.org/a/XOJDcFayeLjGY0DLg6TRyRfCd
