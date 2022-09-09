@@ -15,19 +15,19 @@ brain-progression - find missing number in arithmetic progression
 brain-prime - checking if a number is prime
 ```
 ### Launch games and videos:
-```
+
 ## brain-even
 https://asciinema.org/a/H9tHusQRzxDXghhxq7oGXmJR1
-```
+
 ## brain-calc
 https://asciinema.org/a/XOJDcFayeLjGY0DLg6TRyRfCd
-```
+
 ## brain-gcd
 https://asciinema.org/a/KI7KSF1KhBADyI55q5KKuGaM0
-```
+
 ## brain-progression
 https://asciinema.org/a/NeuJ50RbgGx8id9fcPM22wGdM
-```
+
 ## brain-prime
 https://asciinema.org/a/15EhXyqzn6roI1vmiK3C3bdjG
-```
+
