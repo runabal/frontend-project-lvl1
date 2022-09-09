@@ -9,10 +9,10 @@ const progression = () => {
   do {
     const startnumber = Math.floor(Math.random() * 20) + 1;
     const quantity = Math.floor(Math.random() * 5) + 5;
-    const hiddenNumber = Math.floor(Math.random() * (startnumber - 1));
+    const hiddenNumber = Math.floor(Math.random() * quantity);
     const result = [];
     let arrresult = 0;
-    for (let j = 0; j <= quantity; j += 1) {
+    for (let j = 0; j < quantity; j += 1) {
       arrresult += startnumber;
       result.push(arrresult);
     }
@@ -20,12 +20,11 @@ const progression = () => {
     endresult.splice(hiddenNumber, 1, '..');
     console.log(`Question: ${endresult.join(' ')}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    const resulthiddenNumber = result[hiddenNumber];
-    if (String(resulthiddenNumber) === userAnswer) {
+    if (String(result[hiddenNumber]) === userAnswer) {
       console.log('Correct!');
       roundCount += 1;
     } else {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${resulthiddenNumber}.`);
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${result[hiddenNumber]}.`);
       console.log(`Let's try again, ${userName}!`);
       break;
     }
