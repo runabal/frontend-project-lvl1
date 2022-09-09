@@ -10,21 +10,17 @@ const index = (gamerules, userData) => {
     const [question, correctAnswer] = userData();
     console.log(`Question:${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
       roundCount += 1;
-      return;
+    } else {
+      console.log(`${userAnswer}is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+      console.log(`Let's try again, ${userName}!`);
+      break;
     }
-    console.log(
-      `${userAnswer}is wrong answer ;(. Correct answer was ${correctAnswer}.`,
-    );
-    console.log(`Let's try again, ${userName}!`);
-    break;
   } while (roundCount < 3);
   if (roundCount === 3) {
     console.log(`Congratulations, ${userName}!`);
   }
-  console.log(index);
 };
 export default index;
