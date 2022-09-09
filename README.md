@@ -15,7 +15,7 @@ brain-progression - find missing number in arithmetic progression
 brain-prime - checking if a number is prime
 ```
 ### Launch games and videos:
-```
+
 brain-even
 [![asciicast](https://asciinema.org/a/H9tHusQRzxDXghhxq7oGXmJR1.svg)](https://asciinema.org/a/H9tHusQRzxDXghhxq7oGXmJR1)
 
@@ -30,4 +30,4 @@ https://asciinema.org/a/NeuJ50RbgGx8id9fcPM22wGdM
 
 brain-prime
 https://asciinema.org/a/15EhXyqzn6roI1vmiK3C3bdjG
-```
+
