@@ -1,7 +1,7 @@
-import index from "../index.js";
-import getRandom from "../utils.js";
+import index from '../index.js';
+import getRandom from '../utils.js';
 
-const gameRules = "Find the greatest common divisor of given numbers . ";
+const gameRules = 'Find the greatest common divisor of given numbers . ';
 
 const gcd = (number1, number2) => {
   if (number1 % number1 !== 0 || number2 % number1 !== 0) {

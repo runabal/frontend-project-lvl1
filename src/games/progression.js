@@ -1,7 +1,7 @@
-import index from "../index.js";
-import getRandom from "../utils.js";
+import index from '../index.js';
+import getRandom from '../utils.js';
 
-const gameRules = "What number is missing in the progression?";
+const gameRules = 'What number is missing in the progression?';
 
 const progression = (getNumber, dependence) => {
   const result = [];
@@ -20,8 +20,8 @@ const userDate = () => {
   const hiddenNumber = getRandom(0, quantity);
   const arprogression = progression(startnumber, dependence);
   const trueAnswer = `${arprogression[hiddenNumber]}`;
-  arprogression[hiddenNumber] = "..";
-  const question = arprogression.join(" ");
+  arprogression[hiddenNumber] = '..';
+  const question = arprogression.join(' ');
   return [question, trueAnswer];
 };
 

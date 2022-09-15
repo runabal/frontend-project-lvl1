@@ -1,8 +1,7 @@
-import index from "../index.js";
-import getRandom from "../utils.js";
+import index from './index.js';
+import getRandom from '../utils.js';
 
-const gameRules =
-  'Answer "yes" if given number is prime. Otherwise answet "no".';
+const gameRules = 'Answer "yes" if given number is prime. Otherwise answet "no".';
 
 const isPrime = (number) => {
   if (number < 2) {
@@ -19,7 +18,7 @@ const isPrime = (number) => {
 const userDate = () => {
   const number = getRandom(1, 100);
   const question = `${number}`;
-  const trueAnswer = isPrime(number) ? "yes" : "no";
+  const trueAnswer = isPrime(number) ? 'yes' : 'no';
   return [question, trueAnswer];
 };
 export default () => index(gameRules, userDate);
