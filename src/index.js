@@ -8,13 +8,13 @@ const index = (gamerules, userData) => {
   let roundCount = 0;
   do {
     const [question, correctAnswer] = userData();
-    console.log(`Question:${question}`);
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
       roundCount += 1;
     } else {
-      console.log(`${userAnswer}is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
       console.log(`Let's try again, ${userName}!`);
       break;
     }

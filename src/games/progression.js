@@ -1,36 +1,29 @@
 import readlineSync from 'readline-sync';
+import index from '../index.js';
+import getRandom from '../utils.js';
 
-const progression = () => {
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-  console.log('What number is mission in the progression?');
-  let roundCount = 0;
-  do {
-    const startnumber = Math.floor(Math.random() * 20) + 1;
-    const quantity = Math.floor(Math.random() * 5) + 5;
-    const hiddenNumber = Math.floor(Math.random() * quantity);
+const gameRules = 'What number is missing in the progression?';
+
+const progression = (getNumber, dependence) => {
     const result = [];
-    let arrresult = 0;
-    for (let j = 0; j < quantity; j += 1) {
-      arrresult += startnumber;
+    let arrresult = getNumber;
+    for (let j = 0; j < 10; j += 1) {
+      arrresult += dependence;
       result.push(arrresult);
     }
-    const endresult = result.slice();
-    endresult.splice(hiddenNumber, 1, '..');
-    console.log(`Question: ${endresult.join(' ')}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-    if (String(result[hiddenNumber]) === userAnswer) {
-      console.log('Correct!');
-      roundCount += 1;
-    } else {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${result[hiddenNumber]}.`);
-      console.log(`Let's try again, ${userName}!`);
-      break;
-    }
-  } while (roundCount < 3);
-  if (roundCount === 3) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+return result;
+    };
+
+const userDate = () => {
+const startnumber = getRandom(1, 20);
+const dependence = getRandom(1, 10);
+const quantity = getRandom(2, 10);
+const hiddenNumber =getRandom(0, quantity);
+const arprogression = progression(startnumber, dependence);
+const trueAnswer = `${arprogression[hiddenNumber]}`;
+arprogression[hiddenNumber] = '..';
+const question = arprogression.join(' ');
+return [question, trueAnswer];
 };
-export default progression;
+
+export default () => index(gameRules, userDate);

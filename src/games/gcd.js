@@ -1,33 +1,25 @@
 import readlineSync from 'readline-sync';
+import index from '../index.js';
+import getRandom from '../utils.js';
 
-const gcd = () => {
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-  console.log('Find the greatest common divisor of given numbers. ');
-  let roundCount = 0;
-  do {
-    const num1 = Math.floor(Math.random() * 100) + 1;
-    const num2 = Math.floor(Math.random() * 100) + 1;
-    console.log(`Question: ${num1} ${num2}`);
-    let result = num1;
-    while (num1 % result !== 0 || num2 % result !== 0) {
-      result -= 1;
-    }
-    const userAnswer = readlineSync.question('Your answer: ');
-    if (result.toString() === userAnswer) {
-      console.log('Correct!');
-      roundCount += 1;
-    } else {
-      console.log(
-        `${userAnswer} is wrong answer ;(. Correct answer was ${result} Let's try again, ${userName}!`,
-      );
-      break;
-    }
-  } while (roundCount < 3);
+const gameRules = 'Find the greatest common divisor of given numbers . ';
 
-  if (roundCount === 3) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+const gcd = (number1, number2) => {
+  
+   let result = number1;
+    while (number1 % number1 !== 0 || number2 % number1 !== 0) {
+      return gcd(number2, number1 % number2);
+    }
+return number1;
 };
-export default gcd;
+
+
+
+const userDate = () => {
+const num1 = getRandom(1, 100);
+const num2 = getRandom(1, 100);
+const question = `${num1} ${num2}`;
+const trueAnswer = `${gcd(num1, num2)}`;
+return [question, trueAnswer];
+};
+export default () => index(gameRules, userDate);

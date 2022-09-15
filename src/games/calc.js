@@ -1,44 +1,33 @@
 import readlineSync from 'readline-sync';
+import index from '../index.js'
+import getRandom from '../utils.js'
 
-const calc = () => {
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-  console.log('What is the result of expresssion?');
-  let roundCount = 0;
-  do {
-    const num1 = Math.floor(Math.random() * 100);
-    const num2 = Math.floor(Math.random() * 100);
-    const operation = ['+', '-', '*'];
-    const mathActionChoice = operation[Math.floor(Math.random() * 3)];
-    console.log(`Question: ${num1} ${mathActionChoice} ${num2}`);
-    let result = 0;
-    switch (mathActionChoice) {
+const gameRules = 'What is the result of the expression?';
+
+const calcAnswer = (num1, operator, num2) => {
+
+    switch (operator) {
       case '+':
-        result = num1 + num2;
-        break;
+        return num1 + num2;
       case '-':
-        result = num1 - num2;
-        break;
+        return num1 - num2;
       case '*':
-        result = num1 * num2;
-        break;
+        return num1 * num2;
       default:
-        result = 0;
+        return false;
     }
-    const userAnswer = readlineSync.question('Your answer: ');
-    if (result.toString() === userAnswer) {
-      console.log('Correct!');
-      roundCount += 1;
-    } else {
-      console.log(
-        `${userAnswer} is wrong answer ;(. Correct answer was ${result} Let's try again, ${userName}!`,
-      );
-      break;
-    }
-  } while (roundCount < 3);
-  if (roundCount === 3) {
-    console.log(`Congratulations, ${userName}!`);
-  }
 };
+
+    const userData = () => {
+    const operators = ['+', '-', '*'];
+    const isRandomOperator = operators[Math.floor(Math.random()*3)];
+    const number1 = getRandom(1, 100);
+    const number2 = getRandom(1, 100);
+    const question = `${number1} ${isRandomOperator} ${number2}`
+    const truAnswer = `${calcAnswer(number1, isRandomOperator, number2)}`;
+    return [question, truAnswer];
+};
+
+const calc =() => index(gameRules, userData);
+
 export default calc;
