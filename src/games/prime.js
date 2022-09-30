@@ -1,7 +1,7 @@
 import runround from '../index.js';
 import getRandom from '../utils.js';
 
-const rule = 'Answer "yes" if given number is prime. Otherwise answet "no".';
+const rule = "Answer 'yes' if given number is prime. Otherwise answet 'no'.";
 
 const isPrime = (number) => {
   if (number < 2) {
