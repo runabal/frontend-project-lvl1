@@ -1,7 +1,7 @@
-import index from '../index.js';
+import runround from '../index.js';
 import getRandom from '../utils.js';
 
-const gameRules = 'Answer "yes" if given number is prime. Otherwise answet "no".';
+const rule = 'Answer "yes" if given number is prime. Otherwise answet "no".';
 
 const isPrime = (number) => {
   if (number < 2) {
@@ -15,11 +15,11 @@ const isPrime = (number) => {
   return true;
 };
 
-const userDate = () => {
+const round = () => {
   const number = getRandom(1, 100);
   const question = `${number}`;
   const trueAnswer = isPrime(number) ? 'yes' : 'no';
   return [question, trueAnswer];
 };
-const prime = () => index(gameRules, userDate);
-export default prime;
+const runprime = () => runround(rule, round);
+export default runprime;
