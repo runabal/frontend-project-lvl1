@@ -1,9 +1,9 @@
-import index from '../index.js';
+import runround from '../index.js';
 import getRandom from '../utils.js';
 
-const gameRules = 'What is the result of the expression?';
+const rule = 'What is the result of the expression?';
 
-const calcAnswer = (num1, operator, num2) => {
+const isCalc = (num1, operator, num2) => {
   switch (operator) {
     case '+':
       return num1 + num2;
@@ -16,16 +16,16 @@ const calcAnswer = (num1, operator, num2) => {
   }
 };
 
-const userData = () => {
+const round = () => {
   const operators = ['+', '-', '*'];
-  const isRandomOperator = operators[Math.floor(Math.random() * 3)];
+  const RandomOperator = operators[getRandom(0, 2)];
   const number1 = getRandom(1, 100);
   const number2 = getRandom(1, 100);
-  const question = `${number1} ${isRandomOperator} ${number2}`;
-  const truAnswer = `${calcAnswer(number1, isRandomOperator, number2)}`;
+  const question = `${number1} ${RandomOperator} ${number2}`;
+  const truAnswer = `${isCalc(number1, RandomOperator, number2)}`;
   return [question, truAnswer];
 };
 
-const calc = () => index(gameRules, userData);
+const runcalc = () => runround(rule, round);
 
-export default calc;
+export default runcalc;
