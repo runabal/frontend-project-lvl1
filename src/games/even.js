@@ -1,7 +1,7 @@
 import getRandom from '../utils.js';
 import runround from '../index.js';
 
-const rule = 'Answer "yes" if number even otherwise answer "no".';
+const rule = "Answer 'yes' if number even otherwise answer 'no'.";
 
 const isEven = (number) => number % 2 === 0;
 const round = () => {
