@@ -1,31 +1,29 @@
-import runround from '../index.js';
+import run from '../index.js';
 import getRandom from '../utils.js';
 
 const rule = 'What is the result of the expression?';
+const operators = ['+', '-', '*'];
 
-const isCalc = (num1, operator, num2) => {
+const calculate = (x, y, operator) => {
   switch (operator) {
     case '+':
-      return num1 + num2;
+      return x + y;
     case '-':
-      return num1 - num2;
+      return x - y;
     case '*':
-      return num1 * num2;
+      return x * y;
     default:
-      return false;
+      throw new Error(`Unknown operator: '${operator}'!`);
   }
 };
 
-const round = () => {
-  const operators = ['+', '-', '*'];
-  const RandomOperator = operators[getRandom(0, 2)];
+const getRound = () => {
+  const randomOperator = operators[getRandom(0, operators.length-1)];
   const number1 = getRandom(1, 100);
   const number2 = getRandom(1, 100);
-  const question = `${number1} ${RandomOperator} ${number2}`;
-  const truAnswer = `${isCalc(number1, RandomOperator, number2)}`;
-  return [question, truAnswer];
+  const question = `${number1} ${randomOperator} ${number2}`;
+  const expectedAnswer = `${calculate (number1, number2, randomOperator)}`;
+  return [question, expectedAnswer];
 };
 
-const runcalc = () => runround(rule, round);
-
-export default runcalc;
+export default () => run(rule, getRound);

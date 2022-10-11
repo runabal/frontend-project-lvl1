@@ -1,28 +1,28 @@
-import runround from '../index.js';
+import run from '../index.js';
 import getRandom from '../utils.js';
 
 const rule = 'What number is missing in the progression?';
 
-const runprogression = (getNumber, dependence) => {
+const runProgression = (getNumber, dependence) => {
   const result = [];
-  let arrresult = getNumber;
+  let arrResult = getNumber;
   for (let j = 0; j < 10; j += 1) {
-    arrresult += dependence;
-    result.push(arrresult);
+    arrResult += dependence;
+    result.push(arrResult);
   }
   return result;
 };
 
-const round = () => {
-  const startnumber = getRandom(1, 20);
+const getRound = () => {
+  const startNumber = getRandom(1, 20);
   const dependence = getRandom(1, 10);
   const quantity = getRandom(2, 10);
   const hiddenNumber = getRandom(0, quantity);
-  const arprogression = runprogression(startnumber, dependence);
-  const trueAnswer = `${arprogression[hiddenNumber]}`;
-  arprogression[hiddenNumber] = '..';
-  const question = arprogression.join(' ');
-  return [question, trueAnswer];
+  const arProgression = runProgression(startNumber, dependence);
+  const expectedAnswer = `${arProgression[hiddenNumber]}`;
+  arProgression[hiddenNumber] = '..';
+  const question = arProgression.join(' ');
+  return [question, expectedAnswer];
 };
 
-export default () => runround(rule, round);
+export default () => run(rule, getRound);
