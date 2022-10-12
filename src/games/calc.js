@@ -18,11 +18,11 @@ const calculate = (x, y, operator) => {
 };
 
 const getRound = () => {
-  const randomOperator = operators[getRandom(0, operators.length-1)];
+  const randomOperator = operators[getRandom(0, operators.length - 1)];
   const number1 = getRandom(1, 100);
   const number2 = getRandom(1, 100);
   const question = `${number1} ${randomOperator} ${number2}`;
-  const expectedAnswer = `${calculate (number1, number2, randomOperator)}`;
+  const expectedAnswer = `${calculate(number1, number2, randomOperator)}`;
   return [question, expectedAnswer];
 };
 
