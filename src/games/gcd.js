@@ -1,20 +1,23 @@
 import run from '../index.js';
-import getRandom from '../utils.js';
+import getRandomNumber from '../utils.js';
 
 const rule = 'Find the greatest common divisor of given numbers . ';
 
-const isGcd = (number1, number2) => {
-  if (number1 % number1 !== 0 || number2 % number1 !== 0) {
-    return isGcd(number2, number1 % number2);
+const findGcd = (x, y) => {
+  if (y === 0) {
+    return x;
   }
-  return number1;
+  return findGcd(y, x % y);
 };
 
 const getRound = () => {
-  const firstNumber = getRandom(1, 100);
-  const secondNumber = getRandom(1, 100);
+  const firstNumber = getRandomNumber(1, 100);
+  const secondNumber = getRandomNumber(1, 100);
   const question = `${firstNumber} ${secondNumber}`;
-  const trueAnswer = `${isGcd(firstNumber, secondNumber)}`;
-  return [question, trueAnswer];
+  const answer = String(findGcd(firstNumber, secondNumber));
+  return [question, answer];
 };
-export default () => run(rule, getRound);
+
+export default () => {
+  run(rule, getRound);
+};

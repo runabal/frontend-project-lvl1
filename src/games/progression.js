@@ -1,28 +1,37 @@
 import run from '../index.js';
-import getRandom from '../utils.js';
+import getRandomNumber from '../utils.js';
+import getRandomIndex from '../randomIndex.js';
 
 const rule = 'What number is missing in the progression?';
 
-const runProgression = (getNumber, dependence) => {
-  const result = [];
-  let arrResult = getNumber;
-  for (let j = 0; j < 10; j += 1) {
-    arrResult += dependence;
-    result.push(arrResult);
+const minRange = 1;
+const maxRange = 100;
+const minLength = 5;
+const maxLength = 10;
+const minStep = 2;
+const maxStep = 10;
+
+const bildProgression = (start, step, length) => {
+  const progression = [];
+  for (let i = 0; i < length; i += 1) {
+    progression.push(start + i * step);
   }
-  return result;
+  return progression;
 };
 
 const getRound = () => {
-  const startNumber = getRandom(1, 20);
-  const dependence = getRandom(1, 10);
-  const quantity = getRandom(2, 10);
-  const hiddenNumber = getRandom(0, quantity);
-  const arProgression = runProgression(startNumber, dependence);
-  const expectedAnswer = `${arProgression[hiddenNumber]}`;
-  arProgression[hiddenNumber] = '..';
-  const question = arProgression.join(' ');
-  return [question, expectedAnswer];
+  const start = getRandomNumber(minRange, maxRange);
+  const length = getRandomNumber(minLength, maxLength);
+  const step = getRandomNumber(minStep, maxStep);
+  const progression = bildProgression(start, step, length);
+
+  const hiddenIndex = getRandomIndex(progression);
+  const answer = String(progression[hiddenIndex]);
+
+  progression.splice(hiddenIndex, 1, '..');
+  return [progression.join(' '), answer];
 };
 
-export default () => run(rule, getRound);
+export default () => {
+  run(rule, getRound);
+};

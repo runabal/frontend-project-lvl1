@@ -7,6 +7,7 @@ const run = (rule, getRound) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(rule);
+
   for (let i = 1; i <= roundsCount; i += 1) {
     const [question, correctAnswer] = getRound();
     console.log(`Question: ${question}`);
@@ -22,4 +23,5 @@ const run = (rule, getRound) => {
   }
   console.log(`Congratulations, ${userName}!`);
 };
+
 export default run;

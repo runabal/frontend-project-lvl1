@@ -1,5 +1,5 @@
 import run from '../index.js';
-import getRandom from '../utils.js';
+import getRandomNumber from '../utils.js';
 
 const rule = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
@@ -18,12 +18,14 @@ const calculate = (x, y, operator) => {
 };
 
 const getRound = () => {
-  const randomOperator = operators[getRandom(0, operators.length - 1)];
-  const number1 = getRandom(1, 100);
-  const number2 = getRandom(1, 100);
+  const randomOperator = operators[getRandomNumber(0, operators.length - 1)];
+  const number1 = getRandomNumber(1, 100);
+  const number2 = getRandomNumber(1, 100);
   const question = `${number1} ${randomOperator} ${number2}`;
-  const expectedAnswer = `${calculate(number1, number2, randomOperator)}`;
-  return [question, expectedAnswer];
+  const answer = String(calculate(number1, number2, randomOperator));
+  return [question, answer];
 };
 
-export default () => run(rule, getRound);
+export default () => {
+  run(rule, getRound);
+};
