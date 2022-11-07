@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "type": "module",
   "version": "1.0.0",
-  "description": "Igry razuma",
+  "description": "Set of logic games",
   "main": "index.js",
   "bin": {
     "brain-games": "bin/brain-games.js",
@@ -32,7 +32,6 @@
     "prettier": "^2.7.1"
   },
   "dependencies": {
-    "lodash": "^4.17.21",
     "readline-sync": "^1.4.10"
   }
 }
