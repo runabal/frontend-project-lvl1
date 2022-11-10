@@ -1,7 +1,7 @@
-import run from "../index.js";
-import { getRandomNumber, getRandomIndex } from "../utils.js";
+import run from '../index.js';
+import { getRandomNumber, getRandomIndex } from '../utils.js';
 
-const rule = "What number is missing in the progression?";
+const rule = 'What number is missing in the progression?';
 const minRange = 1;
 const maxRange = 100;
 const minLength = 5;
@@ -23,8 +23,8 @@ const getRound = () => {
   const step = getRandomNumber(minStep, maxStep);
   const progression = buildProgression(start, step, length);
   const hiddenIndex = getRandomIndex(progression);
-  const answer = String(progression.splice(hiddenIndex, 1, ".."));
-  const question = progression.join(" ");
+  const answer = String(progression.splice(hiddenIndex, 1, '..'));
+  const question = progression.join(' ');
   return [question, answer];
 };
 
