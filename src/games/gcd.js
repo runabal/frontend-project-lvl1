@@ -1,7 +1,7 @@
-import run from '../index.js';
-import { getRandomNumber } from '../utils.js';
+import run from "../index.js";
+import { getRandomNumber } from "../utils.js";
 
-const rule = 'Find the greatest common divisor of given numbers . ';
+const rule = "Find the greatest common divisor of given numbers . ";
 const min = 1;
 const max = 100;
 
